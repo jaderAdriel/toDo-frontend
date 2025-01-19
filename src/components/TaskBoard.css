@@ -1,0 +1,37 @@
+.taskList-wrapper {
+    width: 100%;
+    max-width: 70em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    row-gap: var(--spacing-sm);
+}
+
+.taskBoard {
+    width: 100%;
+    max-width: 70em;
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-direction: column;
+    justify-content: center;
+
+    > header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: end;
+        padding: 0 var(--spacing-sm);
+
+        .title {
+            font-size: clamp(1.2rem, 1.5vw, 2rem );
+        }
+
+        button {
+            padding: 0 var(--spacing-sm);
+            background-color: #2383e2;
+            font-size: clamp(1.1rem, 1.1vw, 1.3rem );
+            height: fit-content;
+            color: #FFF;
+            border-radius: 5px;
+        }
+    }
+}

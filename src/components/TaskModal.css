@@ -1,0 +1,15 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    background-color: var(--surface-color-300);
+    padding: var(--spacing-sm);
+    z-index: 999;
+    right: 0;
+    width: clamp(15em, 100%, 30em);
+    border-left: 1px solid var(--surface-color-300);
+}
+
+.modal-content {
+    padding: var(--spacing-xs);
+}

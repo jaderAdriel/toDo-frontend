@@ -1,0 +1,56 @@
+#app {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+#root {
+    padding: clamp(var(--spacing-xxs), 2vw, var(--spacing-lg));
+}
+
+:root {
+    /* Spacing Variables */
+    --spacing-xxs: 0.25rem;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Background (fundo principal e superfícies) */
+    --bg-color-100: #121212; /* Fundo mais escuro (modo escuro ou elementos de destaque) */
+    --bg-color-200: #191919; /* Fundo escuro secundário */
+    --bg-color-300: #2a2a2a; /* Fundo de superfícies médias */
+    --bg-color-400: #383838; /* Destaques no fundo escuro */
+    --bg-color-500: #f5f5f5; /* Fundo principal no modo claro */
+    --bg-color-600: #ffffff; /* Fundo de superfícies elevadas no modo claro */
+
+    /* Surface (Superfícies elevadas, como cards, modais, etc.) */
+    --surface-color-100: #1e1e1e; /* Superfície mais escura (modo escuro) */
+    --surface-color-150: #262626; /* Superfície mais escura (modo escuro) */
+    --surface-color-200: #2a2a2a; /* Superfície padrão no modo escuro */
+    --surface-color-300: #383838; /* Superfície levemente elevada no modo escuro */
+    --surface-color-400: #424242; 
+    --surface-color-500: #525252; 
+    --surface-color-600: #4b4b4b; 
+
+    --bg-color: #202020;
+    --surface-color: #272727;
+    --bg-color-light: #2a2a2a;
+    --surface-color-light: #323232;
+    --bg-color-dark: #111111;
+    --surface-color-dark: #1e1e1e;
+    --bg-color-gray: #252525;
+    --surface-color-gray: #2c2c2c;
+    --bg-color-blueish: #1f2a30;
+    --surface-color-blueish: #263138;
+
+    --status-to-do: #ff4f4f;
+    --status-doing: #f0f971;
+    --status-done: #76f971;
+
+    --status-to-do-bg: rgba(255, 66, 66, 0.5);
+    --status-doing-bg: rgba(255, 255, 0, 0.2);
+    --status-done-bg: rgba(0, 255, 0, 0.2);
+
+}

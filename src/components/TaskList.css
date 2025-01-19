@@ -1,0 +1,56 @@
+
+.to-do {
+    --color: var(--status-to-do);
+    --bg-color: var(--status-to-do-bg);
+}
+
+.doing {
+    --color:  var(--status-doing);
+    --bg-color: var(--status-doing-bg);
+}
+
+.done {
+    --color: var(--status-done);
+    --bg-color: var(--status-done-bg);
+}
+
+.taskList {
+    display: flex;
+    padding: var(--spacing-sm);
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    border-radius: 8px;
+    header {
+        width: 100%;
+        .title {
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            text-transform: capitalize;
+            font-weight: 400;
+            width: fit-content;
+            padding: var(--spacing-xxs) 0;
+            line-height: 0.9;
+            padding-right: var(--spacing-sm);
+            /*background-color: var(--bg-color);*/
+            border-radius: 7px;
+        }
+
+        .title::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--color);
+            margin: 0 var(--spacing-xs);
+        }
+
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
