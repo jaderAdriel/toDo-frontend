@@ -1,70 +1,31 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# To Do App
 
-In the project directory, you can run:
+Um app simples para gerenciar tarefas, com funcionalidades como arrastar e soltar, edição em modal e organização por status.
 
-### `npm start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Gerenciamento de Tarefas**: Adicione, edite e remova tarefas facilmente.
+- **Organização por Status**: Visualize e organize tarefas em três categorias: "To Do", "Doing" e "Done".
+- **Arrastar e Soltar**: Atualize o status de tarefas rapidamente, movendo-as entre as categorias usando a funcionalidade de arrastar e soltar.
+- **Edição em Modal**: Edite detalhes de uma tarefa diretamente em um modal, acessado ao clicar na tarefa.
+- **Formulário Intuitivo**: Crie ou edite tarefas com um formulário simples e eficiente.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como Funciona
 
-### `npm test`
+1. **Adicionar Tarefas**: Clique no botão **"New"**, preencha o formulário com os detalhes da tarefa e clique em **"Save"**.
+2. **Editar Tarefas**: Clique em uma tarefa existente para abrir o modal de edição. Altere os detalhes e salve suas alterações.
+3. **Mover Tarefas**: Arraste uma tarefa de uma categoria para outra para alterar seu status.
+4. **Excluir Tarefas**: No modal de edição, clique no botão de exclusão para remover a tarefa.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## O que Eu Aprendi
 
-### `npm run build`
+- **React**: Criação de componentes funcionais reutilizáveis e uso de hooks essenciais como `useState` e `useEffect`.
+- **Performance com Hooks**: Uso de `useCallback` para otimizar funções que dependem de valores estáveis e `useMemo` para memorizar valores derivados de cálculos caros.
+- **CSS Modular**: Estilização de componentes com CSS modular para facilitar a manutenção e evitar conflitos de estilos.
+- **React Router**: Configuração de rotas dinâmicas e navegação com `react-router-dom`.
+- **Gerenciamento de Estado**: Controle eficiente do estado da aplicação usando hooks.
+- **Eventos de DOM**: Manipulação de eventos como cliques e arrastar/soltar para criar interações intuitivas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
