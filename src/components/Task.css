@@ -2,11 +2,11 @@
     padding: clamp(var(--spacing-xs), 2.5vw, var(--spacing-sm));
     background-color: var(--surface-color-150);
     border: 1px solid #262626;  
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 .task:hover {
-    background-color: var(--surface-color-200);
+    background-color: var(--surface-color-300);
 }
 

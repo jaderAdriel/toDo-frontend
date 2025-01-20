@@ -20,6 +20,22 @@
     flex-direction: column;
     gap: var(--spacing-sm);
     border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    .create-new-button {
+        color: var(--surface-color-500);
+        border: 1px solid var(--surface-color-300);
+        display: flex;
+        gap: var(--spacing-xs);
+        padding: clamp(var(--spacing-xs), 2.5vw, var(--spacing-sm));
+        cursor: pointer;
+        user-select: none;
+        border-radius:8px;
+        align-items: center;
+        &:hover {
+            background-color: var(--surface-color-300);
+        }
+    }
+
     header {
         width: 100%;
         .title {

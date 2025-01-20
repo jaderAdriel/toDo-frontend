@@ -9,7 +9,7 @@ function TaskModal({children, onSave, handleCloseModal, isOpen}) {
 
     return  (
         <div className="modal-overlay">
-            <FaAnglesRight size={25} onClick={() => { handleCloseModal()}}/>
+            <FaAnglesRight size={18} onClick={() => { handleCloseModal()}}/>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>

@@ -3,7 +3,7 @@
     max-width: 70em;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    row-gap: var(--spacing-sm);
+    gap: var(--spacing-sm);
 }
 
 .taskBoard {

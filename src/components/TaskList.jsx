@@ -2,9 +2,10 @@ import Task from "./Task";
 import './TaskList.css';
 import {useCallback, useMemo} from "react";
 import React from "react";
+import {FaPlus} from "react-icons/fa6";
 
 
-const TaskList = React.memo(({title, tasks, status, handleOnClickTask, handleDropTask}) => {
+const TaskList = React.memo(({title, tasks, status, handleOnClickTask, handleDropTask, handleNewTask}) => {
 
     const filteredTasks = useMemo(() => {
             return tasks.filter((task) => task.status === status);
@@ -37,7 +38,9 @@ const TaskList = React.memo(({title, tasks, status, handleOnClickTask, handleDro
                         handleDragStart={handleDragStart}/>
                 ))}
 
-                <div className="create-new" ></div>
+                <div className="create-new-button" onClick={() => {handleNewTask(status)}}>
+                    <FaPlus size={18} /> <span>New Task</span>
+                </div>
             </ul>
             
         </section>

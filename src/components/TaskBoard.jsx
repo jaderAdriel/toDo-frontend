@@ -81,9 +81,9 @@ function TaskBoard() {
         })
     }
 
-    const handleNewTask = () => {
+    const handleNewTask = (status = "to-do") => {
       setModalIsOpen(true);
-      setSelectedTask({});
+      setSelectedTask({status});
       formMode.current = "CREATE";
     }
 
@@ -114,9 +114,9 @@ function TaskBoard() {
             </header>
 
             <div className="taskList-wrapper">
-              <TaskList title="To Do" tasks={tasks} status="to-do" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask}/>
-              <TaskList title="Doing" tasks={tasks} status="doing" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask}/>
-              <TaskList title="Done" tasks={tasks} status="done" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask}/>
+              <TaskList title="To Do" tasks={tasks} status="to-do" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask} handleNewTask={handleNewTask}/>
+              <TaskList title="Doing" tasks={tasks} status="doing" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask} handleNewTask={handleNewTask}/>
+              <TaskList title="Done" tasks={tasks} status="done" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask} handleNewTask={handleNewTask}/>
             </div>
 
             <TaskModal handleCloseModal={handleCloseModal} isOpen={modalIsOpen}>
