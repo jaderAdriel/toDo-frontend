@@ -69,13 +69,23 @@ function TaskBoard() {
       formMode.current = "CREATE";
     }, []);
 
+    const handleDropTask = (event, status) => {
+        event.preventDefault();
+
+        const data = event.dataTransfer.getData("application/json");
+        const updatedTask = JSON.parse(data);
+        updatedTask.status = status;
+
+        setTasks((prevTasks) => {
+            return prevTasks.map((task) => task.id === updatedTask.id ? updatedTask : task);
+        })
+    }
+
     const handleNewTask = () => {
       setModalIsOpen(true);
       setSelectedTask({});
       formMode.current = "CREATE";
     }
-
-    console.log("Renderixou taskModal")
 
     const handleOnSubmitTaskForm = useCallback((taskFormState) => {
         const newTask = {
@@ -104,9 +114,9 @@ function TaskBoard() {
             </header>
 
             <div className="taskList-wrapper">
-              <TaskList title="To Do" tasks={tasks} status="to-do" handleOnClickTask={handleOnClickTask}/>
-              <TaskList title="Doing" tasks={tasks} status="doing" handleOnClickTask={handleOnClickTask} />
-              <TaskList title="Done" tasks={tasks} status="done" handleOnClickTask={handleOnClickTask}/>
+              <TaskList title="To Do" tasks={tasks} status="to-do" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask}/>
+              <TaskList title="Doing" tasks={tasks} status="doing" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask}/>
+              <TaskList title="Done" tasks={tasks} status="done" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask}/>
             </div>
 
             <TaskModal handleCloseModal={handleCloseModal} isOpen={modalIsOpen}>
