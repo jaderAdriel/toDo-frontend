@@ -4,6 +4,30 @@
     border: 1px solid #262626;  
     border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-right: var(--spacing-xs);
+
+    span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &:not(:hover) .actions {
+        visibility: hidden;
+    }
+
+    .actions:hover, .actions {
+        visibility: visible;
+        border: 1px outset var(--surface-color-400);
+        padding: 0 var(--spacing-xs);
+        border-radius: 5px;
+        background-color: var(--surface-color-400);
+        padding-top: var(--spacing-xs);
+    }
 }
 
 .task:hover {
