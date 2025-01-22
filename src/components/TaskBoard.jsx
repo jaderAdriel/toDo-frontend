@@ -40,10 +40,6 @@ function TaskBoard() {
       formMode.current = "CREATE";
     }, [])
 
-    const handleDeleteTask = useCallback((id) => {
-        removeTask(id);
-    }, [removeTask]);
-
     const handleOnSubmitTaskForm = useCallback((taskFormState) => {
         const newTask = {
             id: taskFormState.task_id || taskFormState.length + 1, title: taskFormState.task_title, description: taskFormState.task_description,
