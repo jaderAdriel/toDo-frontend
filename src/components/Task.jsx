@@ -4,12 +4,14 @@ import {useTask} from "../context/TaskContext";
 
 
 
-function Task({task, handleOnClickTask, handleDrop, handleDragStart, handleDragOver}) {
+function Task({task, handleOnClickTask, handleDragStart}) {
 
-    const {removeTask} = useTask()
+    const {removeTask, tasks} = useTask()
 
-    const handleDeleteAction = () => {
+    const handleDeleteAction = (e) => {
+        e.stopPropagation();
         removeTask(task.id);
+        alert("Task deleted successfully");
     }
 
     return (
@@ -21,7 +23,7 @@ function Task({task, handleOnClickTask, handleDrop, handleDragStart, handleDragO
 
             <span>{task.title}</span>
             <div className="actions">
-                <FaRegTrashCan  onClick={() => {handleDeleteAction()}}/>
+                <FaRegTrashCan  onClick={(e) => {handleDeleteAction(e)}}/>
             </div>
         </li>
     )

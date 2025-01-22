@@ -8,7 +8,7 @@ import {useTask} from "../context/TaskContext";
 
 function TaskBoard() {
 
-    const {tasks, addTask, removeTask, updateTask} = useTask();
+    const {tasks, addTask, updateTask} = useTask();
     
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedTask, setSelectedTask] = useState({})
@@ -42,7 +42,7 @@ function TaskBoard() {
 
     const handleOnSubmitTaskForm = useCallback((taskFormState) => {
         const newTask = {
-            id: taskFormState.task_id || taskFormState.length + 1, title: taskFormState.task_title, description: taskFormState.task_description,
+            id: taskFormState.task_id || tasks.length + 1, title: taskFormState.task_title, description: taskFormState.task_description,
             creation_date: taskFormState.task_creation_date, deadline: taskFormState.task_deadline, status: taskFormState.task_status,
         };
 
