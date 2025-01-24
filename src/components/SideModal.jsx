@@ -1,15 +1,15 @@
-import './TaskModal.css'
+import './SideModal.css'
 import {FaAnglesRight} from "react-icons/fa6";
+import {useSideModal} from "../context/SideModalContext";
 
 
-function TaskModal({children, onSave, handleCloseModal, isOpen}) {
-
-
+function SideModal({children}) {
+    const {isOpen, closeModal} = useSideModal();
     if (!isOpen) return null;
 
     return  (
         <div className="modal-overlay">
-            <FaAnglesRight size={18} onClick={() => { handleCloseModal()}}/>
+            <FaAnglesRight size={18} onClick={closeModal}/>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 {children}
             </div>
@@ -17,4 +17,4 @@ function TaskModal({children, onSave, handleCloseModal, isOpen}) {
     )
 }
 
-export default TaskModal;
+export default SideModal;
