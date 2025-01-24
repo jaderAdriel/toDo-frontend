@@ -1,9 +1,9 @@
 .task {
     padding: clamp(var(--spacing-xs), 2.5vw, var(--spacing-sm));
-    background-color: var(--surface-color-150);
+    background-color: var(--surface-color-100);
     border: 1px solid #262626;  
     border-radius: 8px;
-    cursor: pointer;
+    /*cursor: pointer;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +13,7 @@
     span {
         white-space: nowrap;
         overflow: hidden;
+        cursor: pointer;
         text-overflow: ellipsis;
     }
 
@@ -22,7 +23,8 @@
 
     .actions:hover, .actions {
         visibility: visible;
-        border: 1px outset var(--surface-color-400);
+        cursor: pointer;
+        border: 1px solid var(--surface-color-400);
         padding: 0 var(--spacing-xs);
         border-radius: 5px;
         background-color: var(--surface-color-400);
