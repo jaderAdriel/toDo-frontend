@@ -1,73 +1,46 @@
 import TaskList from "./TaskList";
 import './TaskBoard.css';
-import TaskModal from "./TaskModal";
-import {useState, useCallback, useRef} from "react";
+import SideModal from "./SideModal";
+import {useCallback} from "react";
 import TaskForm from "./TaskForm";
 
 import {useTask} from "../context/TaskContext";
+import {useSideModal} from "../context/SideModalContext";
 
 function TaskBoard() {
+    const { openModal } = useSideModal();
+    const {tasks, addTask, setSelectedTask} = useTask();
 
-    const {tasks, addTask, updateTask} = useTask();
-    
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [selectedTask, setSelectedTask] = useState({})
-    const formMode = useRef("CREATE");
-
-    const handleOnClickTask = useCallback((task) => {
-      setModalIsOpen(true);
-      setSelectedTask(task);
-      formMode.current = "UPDATE";
-    }, []);
-
-    const handleCloseModal = useCallback(() => {
-      setModalIsOpen(false);
-      setSelectedTask({});
-      formMode.current = "CREATE";
-    }, []);
-
-    const handleDropTask = useCallback((event, status) => {
-        event.preventDefault();
-        const data = event.dataTransfer.getData("application/json");
-        const updatedTask = JSON.parse(data);
-        updatedTask.status = status;
-        updateTask(updatedTask);
-    }, [updateTask])
+    const handleOnSubmitTaskForm = useCallback((taskForm) => {
+        const newTask = {
+            ...taskForm,
+            id: taskForm.id || tasks.length + 1
+        };
+        addTask(newTask);
+    }, [addTask, tasks.length]);
 
     const handleNewTask = useCallback((status = "to-do") => {
-      setModalIsOpen(true);
-      setSelectedTask({status});
-      formMode.current = "CREATE";
-    }, [])
-
-    const handleOnSubmitTaskForm = useCallback((taskFormState) => {
-        const newTask = {
-            id: taskFormState.task_id || tasks.length + 1, title: taskFormState.task_title, description: taskFormState.task_description,
-            creation_date: taskFormState.task_creation_date, deadline: taskFormState.task_deadline, status: taskFormState.task_status,
-        };
-
-        addTask(newTask);
-        handleCloseModal();
-
-    }, [handleCloseModal, addTask])
+        openModal();
+        setSelectedTask({status});
+    }, [openModal, setSelectedTask]);
 
 
     return (
         <section className="taskBoard">
             <header>
                 <h1 className="title">My tasks</h1>
-                <button className="button-new-task" onClick={handleNewTask}>New</button>
+                <button className="button-new-task" onClick={() => handleNewTask()}>New</button>
             </header>
 
             <div className="taskList-wrapper">
-              <TaskList title="To Do" tasks={tasks} status="to-do" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask} handleNewTask={handleNewTask} />
-              <TaskList title="Doing" tasks={tasks} status="doing" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask} handleNewTask={handleNewTask}/>
-              <TaskList title="Done" tasks={tasks} status="done" handleOnClickTask={handleOnClickTask} handleDropTask={handleDropTask} handleNewTask={handleNewTask}/>
+              <TaskList title="To Do" tasks={tasks} status="to-do" onNewTask={handleNewTask}/>
+              <TaskList title="Doing" tasks={tasks} status="doing" onNewTask={handleNewTask}/>
+              <TaskList title="Done" tasks={tasks} status="done" onNewTask={handleNewTask}/>
             </div>
 
-            <TaskModal handleCloseModal={handleCloseModal} isOpen={modalIsOpen}>
-                <TaskForm task={selectedTask} onSubmit={handleOnSubmitTaskForm} mode={formMode.current} handleCloseModal={handleCloseModal} />
-            </TaskModal>
+            <SideModal>
+                <TaskForm onSubmit={handleOnSubmitTaskForm}/>
+            </SideModal>
         </section>
     )
 }

@@ -1,14 +1,18 @@
 import TaskBoard from "../components/TaskBoard";
 import './Home.css'
-import {TaskProdiver} from "../context/TaskContext";
+import {TaskProvider} from "../context/TaskContext";
+import {SideModalProvider} from "../context/SideModalContext";
 
 function Home() {
 
     return (
         <main id="content">
-            <TaskProdiver>
-                <TaskBoard />
-            </TaskProdiver>
+            <SideModalProvider>
+                <TaskProvider>
+                    <TaskBoard />
+                </TaskProvider>
+            </SideModalProvider>
+
         </main>
     );
 }

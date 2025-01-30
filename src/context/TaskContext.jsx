@@ -46,10 +46,9 @@ const taskList = [
     }
 ];
 
-
-
-export function TaskProdiver({ children }) {
+export function TaskProvider({ children }) {
     const [tasks, setTasks] = useState(taskList);
+    const [selectedTask, setSelectedTask] = useState({})
 
     const addTask = (newTask) => {
         setTasks((prevTasks) => {
@@ -75,7 +74,7 @@ export function TaskProdiver({ children }) {
     }
 
     return (
-        <TaskContext.Provider value={{tasks, addTask, removeTask, updateTask}}>
+        <TaskContext.Provider value={{tasks, addTask, removeTask, updateTask, selectedTask, setSelectedTask}}>
             {children}
         </TaskContext.Provider>
     )

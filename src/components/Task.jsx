@@ -4,9 +4,9 @@ import {useTask} from "../context/TaskContext";
 
 
 
-function Task({task, handleOnClickTask, handleDragStart}) {
+function Task({task, handleDragStart, onClick}) {
 
-    const {removeTask, tasks} = useTask()
+    const {removeTask} = useTask()
 
     const handleDeleteAction = (e) => {
         e.stopPropagation();
@@ -17,7 +17,7 @@ function Task({task, handleOnClickTask, handleDragStart}) {
     return (
         <li
             key={task.id}
-            className="task" onClick={() => {handleOnClickTask(task)}}
+            className="task" onClick={() => {onClick(task)}}
             draggable="true"
             onDragStart={(e) => {handleDragStart(e, task)}}>
 
