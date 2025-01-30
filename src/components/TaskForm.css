@@ -111,6 +111,7 @@
             cursor: pointer;
             
             input {
+                height: 100%;
                 width: 100%;
                 cursor: pointer;
                 padding: var(--spacing-sm);
@@ -172,6 +173,7 @@
         position: relative;
         display: flex;
         align-items: center;
+        justify-content: center;
         color: rgb(255, 255, 255);
         text-transform: capitalize;
         padding: var(--spacing-xxs) 0;
