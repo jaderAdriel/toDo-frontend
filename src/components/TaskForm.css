@@ -113,6 +113,8 @@
             input {
                 height: 100%;
                 width: 100%;
+                display: flex;
+                justify-content: center;
                 cursor: pointer;
                 padding: var(--spacing-sm);
                 background-color: transparent;
