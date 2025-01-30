@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jaderAdriel/toDo-frontend/static/css/main.a4c4dad0.css",
+    "main.js": "/jaderAdriel/toDo-frontend/static/js/main.89e161bc.js",
+    "static/js/488.240e8a89.chunk.js": "/jaderAdriel/toDo-frontend/static/js/488.240e8a89.chunk.js",
+    "index.html": "/jaderAdriel/toDo-frontend/index.html",
+    "main.a4c4dad0.css.map": "/jaderAdriel/toDo-frontend/static/css/main.a4c4dad0.css.map",
+    "main.89e161bc.js.map": "/jaderAdriel/toDo-frontend/static/js/main.89e161bc.js.map",
+    "488.240e8a89.chunk.js.map": "/jaderAdriel/toDo-frontend/static/js/488.240e8a89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4c4dad0.css",
+    "static/js/main.89e161bc.js"
+  ]
+}
